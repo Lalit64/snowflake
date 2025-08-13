@@ -5,8 +5,8 @@
 </h3>
 
 <p align="center">
- <a href="https://github.com/lalit/snowflake/stargazers"><img src="https://img.shields.io/github/stars/lalit/snowflake?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
- <a href="https://github.com/lalit/snowflake/commits"><img src="https://img.shields.io/github/last-commit/lalit/snowflake?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+ <a href="https://github.com/lalit64/snowflake/stargazers"><img src="https://img.shields.io/github/stars/lalit64/snowflake?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+ <a href="https://github.com/lalit64/snowflake/commits"><img src="https://img.shields.io/github/last-commit/lalit64/snowflake?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
   <a href="https://wiki.nixos.org/wiki/Flakes" target="_blank">
  <img alt="Nix Flakes Ready" src="https://img.shields.io/static/v1?logo=nixos&logoColor=d8dee9&label=Nix%20Flakes&labelColor=5e81ac&message=Ready&color=d8dee9&style=for-the-badge">
 </a>
@@ -38,7 +38,7 @@ follow the installation instruction on
 ```bash
 
 # clone 
-git clone https://github.com/lalit/snowflake.git ~/.config/snowflake
+git clone https://github.com/lalit64/snowflake.git ~/.config/snowflake
 cd ~/.config/snowflake 
 
 # macOS 

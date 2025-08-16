@@ -20,6 +20,9 @@
     sbarlua.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-vscode-extensions.url = "git+ssh://git@github.com/nix-community/nix-vscode-extensions?rev=bcf7577daac02aa1a7dfaddc79324b7c6ca4af81";
+
+    lalit64-nur.url = "git+ssh://git@github.com/lalit64/nur.git";
+    lalit64-nur.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

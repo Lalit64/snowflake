@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1751313918,
-        "narHash": "sha256-HsJM3XLa43WpG+665aGEh8iS8AfEwOIQWk3Mke3e7nk=",
+        "lastModified": 1755275010,
+        "narHash": "sha256-lEApCoWUEWh0Ifc3k1JdVjpMtFFXeL2gG1qvBnoRc2I=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "e04a388232d9a6ba56967ce5b53a8a6f713cdfcf",
+        "rev": "7220b01d679e93ede8d7b25d6f392855b81dd475",
         "type": "github"
       },
       "original": {
@@ -260,11 +260,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1754974548,
-        "narHash": "sha256-XMjUjKD/QRPcqUnmSDczSYdw46SilnG0+wkho654DFM=",
+        "lastModified": 1755313937,
+        "narHash": "sha256-pQb7bNcolxYGRiylUCrTddiF+qW2wsUiM9+eRIDUrVU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "27a26be51ff0162a8f67660239f9407dba68d7c5",
+        "rev": "2a749f4790a14f7168be67cdf6e548ef1c944e10",
         "type": "github"
       },
       "original": {
@@ -272,6 +272,26 @@
         "ref": "master",
         "repo": "home-manager",
         "type": "github"
+      }
+    },
+    "lalit64-nur": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743526560,
+        "narHash": "sha256-leNHlfF8XpDYEqIyVF6uAITuZDAnDSskdGqVeGYtwdw=",
+        "ref": "refs/heads/main",
+        "rev": "3bb7c833fe4b2bc5c632c13cb564da249faa4e70",
+        "revCount": 11,
+        "type": "git",
+        "url": "ssh://git@github.com/lalit64/nur.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/lalit64/nur.git"
       }
     },
     "neovim": {
@@ -283,11 +303,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755006979,
-        "narHash": "sha256-pX3ywxoXTQ1Z/2DQr9DDlJS43afbfsWGYYQbPeOWbY4=",
+        "lastModified": 1755253172,
+        "narHash": "sha256-EwGy5bvCNrLH3DDJ05CIGvK97KwiFY0bOqKJoj65Sdk=",
         "ref": "refs/heads/main",
-        "rev": "452e1e3a1879d457ddea511e2f6aa37a94456e4e",
-        "revCount": 7,
+        "rev": "187d77313b2e275867ca0634aae0b7f1a9b57715",
+        "revCount": 8,
         "type": "git",
         "url": "ssh://git@github.com/lalit64/nvim.git"
       },
@@ -406,11 +426,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1755020227,
-        "narHash": "sha256-gGmm+h0t6rY88RPTaIm3su95QvQIVjAJx558YUG4Id8=",
+        "lastModified": 1755268003,
+        "narHash": "sha256-nNaeJjo861wFR0tjHDyCnHs1rbRtrMgxAKMoig9Sj/w=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "695d5db1b8b20b73292501683a524e0bd79074fb",
+        "rev": "32f313e49e42f715491e1ea7b306a87c16fe0388",
         "type": "github"
       },
       "original": {
@@ -424,6 +444,7 @@
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
+        "lalit64-nur": "lalit64-nur",
         "neovim": "neovim",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_3",

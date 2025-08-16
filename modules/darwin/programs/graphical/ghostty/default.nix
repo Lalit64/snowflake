@@ -29,7 +29,7 @@ in
         shell-integration-features = "no-cursor";
         background-opacity = 0.85;
         background-blur = 255;
-        font-size = 16;
+        font-size = 17;
         font-family = "JetBrainsMono Nerd Font Mono";
         font-thicken = true;
         cursor-style = "block";

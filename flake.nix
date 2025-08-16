@@ -38,7 +38,7 @@
             title = "Snowflake";
           };
 
-          namespace = "custom";
+          namespace = "snowflake";
         };
       };
     in

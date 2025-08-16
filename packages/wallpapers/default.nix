@@ -1,5 +1,6 @@
 {
   lib,
+  namespace,
   stdenvNoCC,
   ...
 }:
@@ -25,29 +26,22 @@ let
       };
     in
     pkg;
-  # Helper function to get filename without extension
-  getFileNameWithoutExtension =
-    path:
-    let
-      baseName = builtins.baseNameOf path;
-      splitName = lib.splitString "." baseName;
-    in
-    if lib.length splitName > 1 then lib.concatStringsSep "." (lib.init splitName) else baseName;
-
-  names = builtins.map getFileNameWithoutExtension images;
+  names = builtins.map lib.snowfall.path.get-file-name-without-extension images;
   wallpapers = lib.foldl (
     acc: image:
     let
-      # Get the basename of the file and then take the name before the file extension.
+      # fileName = builtins.baseNameOf image;
+      # lib.getFileName is a helper to get the basename of
+      # the file and then take the name before the file extension.
       # eg. mywallpaper.png -> mywallpaper
-      name = getFileNameWithoutExtension image;
+      name = lib.snowfall.path.get-file-name-without-extension image;
     in
     acc // { "${name}" = mkWallpaper name (./assets + "/${image}"); }
   ) { } images;
   installTarget = "$out/share/wallpapers";
 in
 stdenvNoCC.mkDerivation {
-  name = "snowflake.wallpapers";
+  name = "${namespace}.wallpapers";
   src = ./assets;
 
   installPhase = # bash

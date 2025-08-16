@@ -37,7 +37,7 @@ in
     system.activationScripts = {
       wallpaper.text = ''
         echo >&2 "Setting the wallpaper..."
-        osascript -e 'tell application "Finder" to set desktop picture to POSIX file "${pkgs.snowflake.wallpapers}/share/wallpapers/cloudy-quasar-tokyo-night.png"'
+        osascript -e 'tell application "Finder" to set desktop picture to POSIX file "${pkgs.${namespace}.wallpapers}/share/wallpapers/cloudy-quasar-tokyo-night.png"'
       '';
     };
 

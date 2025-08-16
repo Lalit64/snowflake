@@ -21,7 +21,7 @@ in
       enable = true;
       settings = {
         logo = {
-          source = "/Users/${config.user.name}/wallpapers/nix-darwin.png";
+          source = "${pkgs.${namespace}.wallpapers}/share/wallpapers/nix-darwin.png";
           type = "kitty-direct";
           width = 32;
           height = 10;

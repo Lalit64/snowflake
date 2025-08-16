@@ -51,7 +51,7 @@ in
       initContent = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"
         export PNPM_HOME="/"
-        export EDITOR=/etc/profiles/per-user/lalit/bin/nvim
+        export EDITOR=/run/current-system/sw/bin/nvim
 
         # fix rust liconv stuff
         export PATH="/opt/homebrew/opt/libiconv/bin:$PATH"

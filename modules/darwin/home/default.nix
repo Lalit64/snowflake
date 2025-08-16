@@ -3,10 +3,11 @@
   config,
   lib,
   inputs,
+  namespace,
   ...
 }:
 with lib;
-with lib.custom;
+with lib.${namespace};
 {
   imports = with inputs; [
     home-manager.darwinModules.home-manager

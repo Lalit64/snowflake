@@ -22,6 +22,11 @@ in
       masEnable = mkDefault true;
     };
 
+    system.security.sops = {
+      enable = true;
+      defaultSopsFile = lib.snowfall.fs.get-file "secrets/core/default.yaml";
+    };
+
     system = {
       nix.enable = true;
       fonts.enable = true;

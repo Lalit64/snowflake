@@ -16,6 +16,9 @@
     neovim.url = "git+ssh://git@github.com/lalit64/nvim.git";
     neovim.inputs.nixpkgs.follows = "nixpkgs";
 
+    sops-nix.url = "github:mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     sbarlua.url = "github:lalit64/SbarLua/nix-darwin-package";
     sbarlua.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -51,7 +54,8 @@
       };
 
       systems.modules.darwin = with inputs; [
-        inputs.neovim.nixosModules.default
+        neovim.nixosModules.default
+        sops-nix.darwinModules.sops
       ];
     };
 }

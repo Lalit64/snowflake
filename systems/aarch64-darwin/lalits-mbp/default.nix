@@ -10,7 +10,7 @@
     enable = true;
     dockerEnable = true;
     androidEnable = false;
-    aiEnable = false;
+    aiEnable = true;
   };
 
   suites.desktop.enable = true;

@@ -26,5 +26,20 @@ in
     home.programs.lazygit = {
       enable = true;
     };
+
+    home.programs.gh = {
+      enable = true;
+      settings = {
+        git_protocol = "ssh";
+      };
+      extensions = with pkgs; [
+        gh-dash
+      ];
+    };
+
+    home.programs.gh-dash = {
+      enable = true;
+      settings = { };
+    };
   };
 }

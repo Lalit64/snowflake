@@ -23,6 +23,7 @@ in
 
     programs.terminal = {
       mise-en-place.enable = true;
+      opencode.enable = if cfg.aiEnable then true else false;
     };
 
     programs.graphical = {
@@ -83,7 +84,7 @@ in
       ++ (
         if cfg.aiEnable then
           [
-            "lm-studio"
+            "msty"
           ]
         else
           [ ]
@@ -94,9 +95,7 @@ in
       };
 
       brews =
-        [ ]
-        ++ (
-          if cfg.aiEnable then
+        if cfg.aiEnable then
             [
               {
                 name = "ollama";
@@ -105,8 +104,7 @@ in
 
             ]
           else
-            [ ]
-        );
+            [ ];
     };
   };
 }

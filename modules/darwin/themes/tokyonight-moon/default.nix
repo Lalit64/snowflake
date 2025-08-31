@@ -34,6 +34,12 @@ in
       };
     };
 
+    home.programs.opencode = mkIf config.programs.terminal.opencode.enable {
+      settings = {
+        theme = "tokyonight";
+      };
+    };
+
     home.file = mkIf config.programs.graphical.sketchybar.enable {
       ".config/sketchybar/theme.lua" = {
         text = ''

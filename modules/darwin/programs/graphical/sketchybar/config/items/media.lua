@@ -1,16 +1,13 @@
 local icons = require "icons"
 local colors = require("colors").sections.media
 
-local whitelist = { ["Music"] = true, ["Twilight"] = true }
+local whitelist = { ["Spotify"] = true, ["Music"] = true }
 
 local media_playback = sbar.add("item", {
   position = "right",
   icon = {
-    max_chars = 30,
+    max_chars = 50,
     padding_left = 8,
-    string = "",
-    y_offset = 1,
-    highlight_color = colors.highlight,
   },
   label = {
     string = icons.separators.left .. " " .. icons.music,
@@ -55,11 +52,8 @@ sbar.add("item", {
 
 media_playback:subscribe("media_change", function(env)
   if whitelist[env.INFO.app] then
-    local playing = (env.INFO.state == "playing")
-    media_playback:set {
-      drawing = true,
-      icon = { string = env.INFO.title .. " - " .. env.INFO.artist, highlight = playing },
-    }
+    local drawing = (env.INFO.state == "playing")
+    media_playback:set { drawing = drawing, icon = env.INFO.artist .. " - " .. env.INFO.title }
   end
 end)
 

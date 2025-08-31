@@ -26,6 +26,7 @@ with lib.${namespace};
     home.extraOptions = {
       home.stateVersion = "24.11";
       home.file = mkAliasDefinitions options.home.file;
+      imports = with inputs; [ ];
       xdg.enable = true;
       xdg.configFile = mkAliasDefinitions options.home.configFile;
       programs = mkAliasDefinitions options.home.programs;

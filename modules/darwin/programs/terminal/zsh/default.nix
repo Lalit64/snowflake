@@ -19,8 +19,13 @@ in
   };
 
   config = mkIf cfg.enable {
+    programs.terminal.git = {
+      enable = true;
+    };
+
     environment.systemPackages = with pkgs; [
       zoxide
+      statix
     ];
 
     home.programs.zsh = {

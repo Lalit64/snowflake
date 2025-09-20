@@ -26,11 +26,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     }
     .${stdenvNoCC.system} or (throw "helium: ${stdenvNoCC.system} is unsupported.");
 
-  dontPatch = true;
-  dontConfigure = true;
-  dontBuild = true;
-  dontFixup = true;
-
   nativeBuildInputs = [ undmg ];
 
   sourceRoot = "Helium.app";
@@ -48,9 +43,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     description = "Private, fast, and honest web browser based on Chromium";
     homepage = "https://helium.computer/";
     license = lib.licenses.gpl3;
-    platforms = [
-      "aarch64-darwin"
-      "x86_64-darwin"
-    ];
+    platforms = lib.platforms.darwin;
   };
 })

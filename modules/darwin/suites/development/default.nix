@@ -81,14 +81,7 @@ in
         else
           [ ]
       )
-      ++ (
-        if cfg.aiEnable then
-          [
-            "msty"
-          ]
-        else
-          [ ]
-      );
+      ++ (if cfg.aiEnable then [ ] else [ ]);
 
       masApps = mkIf config.tools.homebrew.masEnable {
         "Xcode" = 497799835;
@@ -96,15 +89,15 @@ in
 
       brews =
         if cfg.aiEnable then
-            [
-              {
-                name = "ollama";
-                start_service = true;
-              }
+          [
+            {
+              name = "ollama";
+              start_service = true;
+            }
 
-            ]
-          else
-            [ ];
+          ]
+        else
+          [ ];
     };
   };
 }

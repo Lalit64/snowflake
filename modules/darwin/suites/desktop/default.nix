@@ -22,11 +22,11 @@ in
       switchaudio-osx
       hellwal
       ice-bar
+      pkgs.${namespace}.helium
     ];
 
     homebrew.casks = [
       "background-music"
-      "ghostty@tip"
       "zen@twilight"
     ];
 

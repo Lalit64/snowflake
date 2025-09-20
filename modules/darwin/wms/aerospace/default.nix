@@ -146,6 +146,16 @@ in
           {
             check-further-callbacks = false;
             "if" = {
+              app-id = "net.imput.helium";
+            };
+            run = [
+              "move-node-to-workspace 1"
+            ];
+          }
+
+          {
+            check-further-callbacks = false;
+            "if" = {
               app-id = "com.vscodium";
             };
             run = [
@@ -281,6 +291,7 @@ in
 
           alt-t = "exec-and-forget open -a Ghostty.app";
           alt-e = ''exec-and-forget open -a "Twilight.app"'';
+          alt-f = ''exec-and-forget open -a "Helium.app"'';
         };
       };
     };

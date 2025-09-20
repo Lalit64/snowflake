@@ -18,7 +18,7 @@ in
 
   config = mkIf cfg.enable {
     home.programs.ghostty.settings = mkIf config.programs.graphical.ghostty.enable {
-      theme = "tokyonight_moon";
+      theme = "TokyoNight Moon";
     };
 
     home.programs.vscode = mkIf config.programs.graphical.vscode.enable {

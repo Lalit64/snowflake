@@ -42,11 +42,9 @@ in
         show-recents = false;
 
         persistent-apps = [
-          "/Applications/Twilight.app/"
-          "${pkgs.vscodium}/Applications/VSCodium.app/"
+          "${pkgs.${namespace}.helium}/Applications/Helium.app/"
           "/Applications/Ghostty.app/"
           "/System/Applications/Music.app/"
-          "/Applications/Xcode.app/"
         ];
       };
 

@@ -19,6 +19,10 @@ in
   config = mkIf cfg.enable {
     programs.terminal.starship.enable = true;
 
+    homebrew.casks = [
+      "ghostty"
+    ];
+
     home.programs.ghostty = {
       enable = true;
       package = pkgs.emptyDirectory;
@@ -37,7 +41,6 @@ in
         window-colorspace = "display-p3";
         adjust-cell-height = "30%";
         macos-titlebar-style = "hidden";
-        macos-window-shadow = true;
         macos-option-as-alt = "left";
         window-inherit-working-directory = false;
         window-padding-balance = true;

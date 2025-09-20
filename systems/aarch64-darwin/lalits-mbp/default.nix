@@ -13,7 +13,9 @@
     aiEnable = true;
   };
 
-  suites.desktop.enable = true;
+  suites.desktop = {
+    enable = true;
+  };
 
   themes.tokyonight-moon.enable = true;
 

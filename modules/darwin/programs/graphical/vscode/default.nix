@@ -58,6 +58,7 @@ in
           userSettings = {
             editor.fontLigatures = true;
             editor.lineHeight = 34;
+            editor.fontFamily = "JetBrainsMono Nerd Font Mono";
             workbench.iconTheme = "symbols";
             editor.minimap.enabled = false;
             workbench.tips.enabled = false;

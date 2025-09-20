@@ -22,6 +22,7 @@ in
       "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"
+      "font-sketchybar-app-font"
     ];
 
     fonts.packages = with pkgs; [
@@ -30,8 +31,6 @@ in
 
       nerd-fonts.jetbrains-mono
       nerd-fonts.caskaydia-cove
-
-      sketchybar-app-font
     ];
 
     system = {

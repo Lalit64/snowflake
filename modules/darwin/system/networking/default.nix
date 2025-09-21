@@ -17,9 +17,12 @@ in
   };
 
   config = mkIf cfg.enable {
+    system.networking.tailscale = {
+      enable = true;
+    };
+
     networking = {
       knownNetworkServices = [
-        # Keep macOS network services consistent
         "Wi-Fi"
         "Thunderbolt Ethernet"
         "Bluetooth PAN"
@@ -32,7 +35,7 @@ in
       ];
     };
     homebrew.casks = [
-      "motrix"
+      "motrix" # download manager
     ];
   };
 }

@@ -20,16 +20,6 @@ in
   };
 
   config = mkIf cfg.enable {
-
-    programs.terminal = {
-      mise-en-place.enable = true;
-      opencode.enable = if cfg.aiEnable then true else false;
-    };
-
-    programs.graphical = {
-      vscode.enable = true;
-    };
-
     nvim = mkIf cfg.neovimEnable {
       enable = true;
     };

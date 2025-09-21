@@ -20,7 +20,6 @@ in
     homebrew.casks = [
       "whatsapp"
       "zoom"
-      "protonvpn"
       "vesktop"
     ];
   };

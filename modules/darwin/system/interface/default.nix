@@ -42,7 +42,7 @@ in
         show-recents = false;
 
         persistent-apps = [
-          "${pkgs.${namespace}.helium}/Applications/Helium.app/"
+          "/Applications/Nix Apps/Helium.app/"
           "/Applications/Ghostty.app/"
           "/System/Applications/Music.app/"
         ];

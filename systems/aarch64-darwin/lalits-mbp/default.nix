@@ -17,8 +17,6 @@
     enable = true;
   };
 
-  themes.tokyonight-moon.enable = true;
-
   # ======================== DO NOT CHANGE THIS ========================
   system.stateVersion = 5;
 }

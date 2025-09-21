@@ -290,8 +290,8 @@ in
           ctrl-cmd-shift-r = "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --reload && aerospace reload-config";
 
           alt-t = "exec-and-forget open -a Ghostty.app";
-          alt-e = ''exec-and-forget open -a "Twilight.app"'';
-          alt-f = ''exec-and-forget open -a ${pkgs.${namespace}.helium}/Applications/Helium.app'';
+          alt-e = ''exec-and-forget open -a "/Applications/Nix Apps/Helium.app"'';
+          alt-f = ''exec-and-forget open -a "Twilight.app"'';
         };
       };
     };

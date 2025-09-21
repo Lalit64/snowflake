@@ -28,6 +28,8 @@ in
     homebrew.casks = [
       "background-music"
       "zen@twilight"
+      "ghostty"
+      "karabiner-elements"
     ];
 
     wms.aerospace = {
@@ -41,10 +43,6 @@ in
       '';
     };
 
-    programs.graphical = {
-      sketchybar.enable = true;
-      ghostty.enable = true;
-      karabiner.enable = true;
-    };
+    services.sketchybar.enable = true;
   };
 }

@@ -1,0 +1,6 @@
+result
+result-*
+**/.DS_Store
+.jj
+.direnv
+.envrc

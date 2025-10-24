@@ -26,12 +26,12 @@ in
       defaults = {
         CustomUserPreferences = {
           "com.apple.HIToolbox" = {
-            AppleCurrentKeyboardLayoutInputSourceID = "com.apple.keylayout.ABC-IND";
+            AppleCurrentKeyboardLayoutInputSourceID = "com.apple.keylayout.British";
             AppleEnabledInputSources = [
               {
                 InputSourceKind = "Keyboard Layout";
                 "KeyboardLayout ID" = 0;
-                "KeyboardLayout Name" = "ABC IND";
+                "KeyboardLayout Name" = "British";
               }
             ];
           };

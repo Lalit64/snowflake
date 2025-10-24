@@ -39,6 +39,8 @@ in
         nixfmt-rfc-style
         typescript
         zulu
+        fd
+        bat
       ]
       ++ (
         if cfg.dockerEnable then

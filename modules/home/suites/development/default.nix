@@ -27,6 +27,7 @@ in
 
       terminal = {
         tools = {
+          fzf.enable = true;
           mise-en-place.enable = true;
           opencode.enable = if cfg.aiEnable then true else false;
         };

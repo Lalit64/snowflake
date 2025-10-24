@@ -49,7 +49,7 @@ in
                 {
                   family = "${font}",
                 },
-                "apple color emoji"
+                "Apple Color Emoji"
               }),
               line_height = 1.3,
               

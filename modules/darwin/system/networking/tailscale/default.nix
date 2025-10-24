@@ -28,21 +28,5 @@ in
     services.tailscale = {
       enable = true;
     };
-
-    system.activationScripts = {
-      serviceConfig = {
-        Label = "com.tailscale.tailscale";
-        UserName = "${config.user.name}";
-        ProgramArguments = [
-          "${pkgs.tailscale}/bin/tailscale login"
-          "--authKey"
-          "tskey-auth-k7Ztk9irJu11CNTRL-9SFVHBcPtTPB7iLjc6SXUPhzTmpzMGWM"
-        ];
-        RunAtLoad = true;
-        KeepAlive = {
-          SuccessfulExit = false;
-        };
-      };
-    };
   };
 }

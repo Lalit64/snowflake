@@ -22,6 +22,8 @@ in
       sbarlua
     ];
 
+    homebrew.brews = [ "media-control" ];
+
     ${namespace}.home.file = {
       ".config/sketchybar" = {
         source = ./config/.;

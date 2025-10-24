@@ -3,12 +3,14 @@ local colors = require("colors").sections.widgets.battery
 
 local battery = sbar.add("item", "widgets.battery", {
   position = "right",
-  icon = {},
-  label = { drawing = false },
+  icon = {
+    padding_right = 6,
+  },
+  label = { drawing = true },
   background = { drawing = false },
   padding_left = 12,
   padding_right = 4,
-  update_freq = 180,
+  update_freq = 60,
   popup = { align = "center", y_offset = 4 },
 })
 
@@ -66,6 +68,18 @@ battery:subscribe({ "routine", "power_source_change", "system_woke" }, function(
       icon = {
         string = icon,
         color = color,
+      },
+    }
+  end)
+
+  sbar.exec('pmset -g batt | grep -Eo "\\d+%"', function(batt_percent)
+    battery:set {
+      label = {
+        string = "" .. batt_percent,
+        color = require("colors").sections.item.text,
+        font = {
+          size = 12,
+        },
       },
     }
   end)

@@ -28,6 +28,26 @@ for i = 1, max_items, 1 do
   })
 
   menu_items[i] = menu
+
+  menu:subscribe("mouse.entered", function()
+    sbar.animate("tanh", 10, function()
+      menu:set {
+        label = {
+          color = require("colors").sections.spaces.indicator,
+        },
+      }
+    end)
+  end)
+
+  menu:subscribe("mouse.exited", function()
+    sbar.animate("tanh", 10, function()
+      menu:set {
+        label = {
+          color = require("colors").sections.item.text,
+        },
+      }
+    end)
+  end)
 end
 
 sbar.add("bracket", { "/menu\\..*/" }, {})

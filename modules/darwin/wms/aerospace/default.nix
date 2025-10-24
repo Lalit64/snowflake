@@ -22,7 +22,9 @@ in
 
       settings = {
         after-login-command = [ ];
-        after-startup-command = [ ];
+        after-startup-command = [
+          # "exec-and-forget ${pkgs.zsh}/bin/zsh /Users/${config.user.name}/.config/sketchybar/helpers/media-stream.sh"
+        ];
 
         key-mapping.preset = "qwerty";
 
@@ -82,6 +84,15 @@ in
             check-further-callbacks = false;
             "if" = {
               app-id = "com.github.th-ch.youtube-music";
+            };
+            run = [
+              "layout floating"
+            ];
+          }
+          {
+            check-further-callbacks = false;
+            "if" = {
+              app-id = "com.apple.Music";
             };
             run = [
               "layout floating"

@@ -6,113 +6,142 @@ sbar.exec("aerospace list-workspaces --all", function(spaces)
   for space_name in spaces:gmatch "[^\r\n]+" do
     local space = sbar.add("item", "space." .. space_name, {
       icon = {
-        string = space_name .. " " .. icons.separators.right,
+        string = space_name,
         color = colors.icon.color,
         highlight_color = colors.label.highlight,
         y_offset = 1,
-        padding_left = 8,
-        padding_right = 4,
+        padding_left = 10,
+        padding_right = 6,
       },
-      label = {
-        font = "sketchybar-app-font:Regular:13.0",
-        string = "space",
-        color = colors.label.color,
-        highlight_color = colors.label.highlight,
-        y_offset = 0,
-        padding_right = 12,
-      },
+      -- label = {
+      --   font = "sketchybar-app-font:Regular:13.0",
+      --   string = "space",
+      --   color = colors.label.color,
+      --   highlight_color = colors.label.highlight,
+      --   y_offset = 0,
+      --   padding_right = 12,
+      -- },
       click_script = "aerospace workspace " .. space_name,
-      padding_left = space_name == "1" and 0 or 4,
     })
+
+    space:subscribe("mouse.entered", function()
+      sbar.animate("tanh", 12, function()
+        space:set {
+          icon = {
+            highlight = true,
+          },
+        }
+      end)
+    end)
+
+    space:subscribe("mouse.exited", function()
+      sbar.animate("tanh", 12, function()
+        space:set {
+          icon = {
+            highlight = false,
+          },
+        }
+      end)
+    end)
 
     space:subscribe("aerospace_workspace_changed", function(env)
       local selected = env.FOCUSED_WORKSPACE == space_name
       space:set {
-        icon = { highlight = selected },
-        label = { highlight = selected },
+        icon = { highlight = selected, string = selected and "" or space_name },
+        -- label = { highlight = selected },
       }
 
-      if selected then
-        sbar.animate("tanh", 8, function()
+      space:subscribe("mouse.exited", function()
+        sbar.animate("tanh", 12, function()
           space:set {
-            background = {
-              shadow = {
-                distance = 0,
-              },
+            icon = {
+              highlight = env.FOCUSED_WORKSPACE == space_name,
             },
-            y_offset = -4,
-            padding_left = 8,
-            padding_right = 0,
-          }
-          space:set {
-            background = {
-              shadow = {
-                distance = 4,
-              },
-            },
-            y_offset = 0,
-            padding_left = 4,
-            padding_right = 4,
           }
         end)
-      end
+      end)
+
+      -- if selected then
+      --   sbar.animate("tanh", 8, function()
+      --     space:set {
+      --       background = {
+      --         shadow = {
+      --           distance = 0,
+      --         },
+      --       },
+      --       y_offset = -4,
+      --       padding_left = 8,
+      --       padding_right = 0,
+      --     }
+      --     space:set {
+      --       background = {
+      --         shadow = {
+      --           distance = 4,
+      --         },
+      --       },
+      --       y_offset = 0,
+      --       padding_left = 4,
+      --       padding_right = 4,
+      --     }
+      --   end)
+      -- end
     end)
 
-    space:subscribe("space_windows_change", function()
-      sbar.exec("aerospace list-windows --format %{app-name} --workspace " .. space_name, function(windows)
-        local no_app = true
-        local icon_line = ""
-        for app in windows:gmatch "[^\r\n]+" do
-          no_app = false
-          local lookup = icon_map[app]
-          local icon = ((lookup == nil) and icon_map["default"] or lookup)
-          icon_line = icon_line .. " " .. icon
-        end
-        sbar.animate("tanh", 10, function()
-          space:set { label = no_app and " " or icon_line }
-        end)
-      end)
-    end)
+    -- space:subscribe("space_windows_change", function()
+    --   sbar.exec("aerospace list-windows --format %{app-name} --workspace " .. space_name, function(windows)
+    --     local no_app = true
+    --     local icon_line = ""
+    --     for app in windows:gmatch "[^\r\n]+" do
+    --       no_app = false
+    --       local lookup = icon_map[app]
+    --       local icon = ((lookup == nil) and icon_map["default"] or lookup)
+    --       icon_line = icon_line .. " " .. icon
+    --     end
+    --     sbar.animate("tanh", 10, function()
+    --       space:set { label = no_app and " " or icon_line }
+    --     end)
+    --   end)
+    -- end)
 
-    space:subscribe("mouse.clicked", function()
-      sbar.animate("tanh", 8, function()
-        space:set {
-          background = {
-            shadow = {
-              distance = 0,
-            },
-          },
-          y_offset = -4,
-          padding_left = 8,
-          padding_right = 0,
-        }
-        space:set {
-          background = {
-            shadow = {
-              distance = 4,
-            },
-          },
-          y_offset = 0,
-          padding_left = 4,
-          padding_right = 4,
-        }
-      end)
-    end)
+    -- space:subscribe("mouse.clicked", function()
+    --   sbar.animate("tanh", 8, function()
+    --     space:set {
+    --       background = {
+    --         shadow = {
+    --           distance = 0,
+    --         },
+    --       },
+    --       y_offset = -4,
+    --       padding_left = 8,
+    --       padding_right = 0,
+    --     }
+    --     space:set {
+    --       background = {
+    --         shadow = {
+    --           distance = 4,
+    --         },
+    --       },
+    --       y_offset = 0,
+    --       padding_left = 4,
+    --       padding_right = 4,
+    --     }
+    --   end)
+    -- end)
   end
 end)
 
 local spaces_indicator = sbar.add("item", {
   icon = {
     padding_left = 8,
-    padding_right = 9,
+    padding_right = 8,
     string = icons.switch.on,
     color = colors.indicator,
   },
-  label = {
-    width = 0,
-    padding_left = 0,
-    padding_right = 8,
-  },
+  -- label = {
+  --   width = 0,
+  --   padding_left = 0,
+  --   padding_right = 8,
+  -- },
   padding_right = 8,
 })
 
@@ -123,28 +152,48 @@ spaces_indicator:subscribe("swap_menus_and_spaces", function()
   }
 end)
 
-spaces_indicator:subscribe("mouse.clicked", function()
-  sbar.animate("tanh", 8, function()
+spaces_indicator:subscribe("mouse.entered", function()
+  sbar.animate("tanh", 10, function()
     spaces_indicator:set {
-      background = {
-        shadow = {
-          distance = 0,
-        },
+      icon = {
+        color = colors.label.color,
       },
-      y_offset = -4,
-      padding_left = 8,
-      padding_right = 4,
-    }
-    spaces_indicator:set {
-      background = {
-        shadow = {
-          distance = 4,
-        },
-      },
-      y_offset = 0,
-      padding_left = 4,
-      padding_right = 8,
     }
   end)
+end)
+
+spaces_indicator:subscribe("mouse.exited", function()
+  sbar.animate("tanh", 10, function()
+    spaces_indicator:set {
+      icon = {
+        color = colors.indicator,
+      },
+    }
+  end)
+end)
+
+spaces_indicator:subscribe("mouse.clicked", function()
+  -- sbar.animate("tanh", 8, function()
+  --   spaces_indicator:set {
+  --     background = {
+  --       shadow = {
+  --         distance = 0,
+  --       },
+  --     },
+  --     y_offset = -4,
+  --     padding_left = 8,
+  --     padding_right = 4,
+  --   }
+  --   spaces_indicator:set {
+  --     background = {
+  --       shadow = {
+  --         distance = 4,
+  --       },
+  --     },
+  --     y_offset = 0,
+  --     padding_left = 4,
+  --     padding_right = 8,
+  --   }
+  -- end)
   sbar.trigger "swap_menus_and_spaces"
 end)

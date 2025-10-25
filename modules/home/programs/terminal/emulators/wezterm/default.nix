@@ -33,6 +33,7 @@ in
               exit_behavior = "CloseOnCleanExit",
               warn_about_missing_glyphs =  false,
               term = "xterm-256color",
+              clean_exit_codes = { 130 },
 
               -- anims
               animation_fps = 1,
@@ -44,7 +45,7 @@ in
               default_cursor_style = "BlinkingUnderline",
 
               -- font
-              font_size = 18.0,
+              font_size = 16.0,
               font = wezterm.font_with_fallback({
                 {
                   family = "${font}",

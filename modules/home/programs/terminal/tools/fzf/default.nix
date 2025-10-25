@@ -19,17 +19,12 @@ in
     programs.fzf = {
       enable = true;
       enableZshIntegration = true;
-      defaultOptions = [
-        ''--border="none"''
-        ''--border-label=""''
-        ''--prompt="❯" ''
-        ''--marker="󰅂"''
-        ''--pointer="󰅂"''
-        ''--separator "─"''
-        ''--scrollbar="│"''
-        ''--layout="reverse"''
-        ''--info="right"''
-      ];
+    };
+
+    programs.zsh = {
+      initContent = ''
+        export FZF_DEFAULT_OPTS='--border="none" --border-label="" --prompt="❯ "  --marker="󰅂" --pointer="󰅂" --separator "─" --scrollbar="│" --layout="reverse" --info="right"'
+      '';
     };
   };
 }

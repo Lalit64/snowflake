@@ -34,6 +34,12 @@ in
       '';
     };
 
+    programs.superfile = {
+      settings = {
+        theme = "tokyonight";
+      };
+    };
+
     programs.vscode = mkIf config.programs.graphical.editors.vscode.enable {
       profiles = {
         default = {

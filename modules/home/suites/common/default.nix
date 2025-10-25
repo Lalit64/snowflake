@@ -36,7 +36,7 @@ in
           fastfetch.enable = true;
           git.enable = true;
           jj.enable = true;
-          lf.enable = true;
+          superfile.enable = true;
           nh.enable = true;
           starship.enable = true;
         };

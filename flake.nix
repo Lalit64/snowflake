@@ -73,5 +73,9 @@
         agenix.homeManagerModules.default
         secrets
       ];
+
+      outputs-builder = channels: {
+        formatter = channels.nixpkgs.nixpkgs-fmt;
+      };
     };
 }

@@ -9,7 +9,9 @@ pkgs.mkShell {
   nativeBuildInputs =
     (with pkgs; [
       age
-      treefmt
+      nixfmt-tree
+      nixpkgs-fmt
+      just
     ])
     ++ (with inputs; [
       agenix.packages.${system}.default

@@ -26,16 +26,6 @@ in
       };
     };
 
-    programs.jujutsu = {
-      enable = true;
-      settings = {
-        user = {
-          name = config.user.fullname;
-          email = config.user.email;
-        };
-      };
-    };
-
     programs.lazygit = {
       enable = true;
     };

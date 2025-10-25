@@ -16,7 +16,7 @@ default:
 
 [group('system')]
 switch:
-  nh darwin switch --flake .
+  nh darwin switch .
 
 [group('system')]
 build:
@@ -36,6 +36,11 @@ build-debug:
 [group('nix')]
 up:
   nix flake update
+
+# fetch nix sha256 hash for url
+[group('nix')]
+hash url:
+  nix hash to-sri --type sha256 $(nix-prefetch-url {{url}})
 
 # Update specific input
 # Usage: just upp nixpkgs

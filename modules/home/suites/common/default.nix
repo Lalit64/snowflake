@@ -35,6 +35,7 @@ in
           direnv.enable = true;
           fastfetch.enable = true;
           git.enable = true;
+          jj.enable = true;
           lf.enable = true;
           nh.enable = true;
           starship.enable = true;

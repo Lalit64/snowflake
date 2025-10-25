@@ -36,9 +36,6 @@ in
       };
 
       shellAliases = {
-        ns = "${pkgs.nh}/bin/nh darwin switch";
-        nhash = ''nix hash to-sri --type sha256 $(nix-prefetch-url "$1")'';
-
         cd = "z";
         ls = "${pkgs.eza}/bin/eza --icons";
         tree = "${pkgs.eza}/bin/eza --icons --tree";

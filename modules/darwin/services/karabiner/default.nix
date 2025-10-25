@@ -17,6 +17,10 @@ let
       /etc/profiles/per-user/lalit/bin/tv | \
       xargs -I {} open -n -a "{}.app"
   '';
+
+  nixTv = pkgs.writeShellScriptBin "nixTv" ''
+    ${pkgs.television}/bin/tv nix-search-tv
+  '';
 in
 {
   options.services.karabiner = with types; {
@@ -42,7 +46,7 @@ in
             "complex_modifications": {
               "rules": [
                 {
-                  "description": "Launch/show Wezterm if it is not in foreground",
+                  "description": "Launch/show Nix Search if it is not in foreground",
                   "manipulators": [
                     {
                       "type": "basic",
@@ -56,7 +60,7 @@ in
                       },
                       "to": [
                         {
-                          "shell_command": "/opt/homebrew/bin/wezterm start --class org.wezfurlong.wezterm.tvApps --always-new-process -- ${pkgs.zsh}/bin/zsh -c ${tvApps}/bin/tvApps"
+                          "shell_command": "/opt/homebrew/bin/wezterm start --class org.wezfurlong.wezterm.tvApps --always-new-process -- ${pkgs.zsh}/bin/zsh -c ${nixTv}/bin/nixTv"
                         }
                       ],
                       "conditions": [
@@ -71,7 +75,7 @@ in
                   ]
                 },
                 {
-                  "description": "Minimize Wezterm if it is in foreground",
+                  "description": "Minimize Nix Search if it is in foreground",
                   "manipulators": [
                     {
                       "type": "basic",

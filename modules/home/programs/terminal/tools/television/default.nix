@@ -24,5 +24,23 @@ in
         };
       };
     };
+
+    programs.nix-search-tv = {
+      enable = true;
+      enableTelevisionIntegration = true;
+
+      settings = {
+        indexes = [
+          "nixpkgs"
+          "home-manager"
+        ]
+        ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+          "nixos"
+        ]
+        ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
+          "darwin"
+        ];
+      };
+    };
   };
 }

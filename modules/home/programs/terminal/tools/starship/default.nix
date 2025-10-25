@@ -17,9 +17,9 @@ in
   config = mkIf cfg.enable {
     programs.btop.enable = true;
 
-    programs.eza = {
+    programs.lsd = {
       enable = true;
-      enableNushellIntegration = true;
+      enableZshIntegration = true;
     };
 
     programs.starship = {

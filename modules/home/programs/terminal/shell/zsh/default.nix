@@ -37,10 +37,9 @@ in
 
       shellAliases = {
         cd = "z";
-        ls = "${pkgs.eza}/bin/eza --icons";
-        tree = "${pkgs.eza}/bin/eza --icons --tree";
+        ls = "${pkgs.lsd}/bin/lsd";
+        tree = "${pkgs.lsd}/bin/lsd --tree";
         ff = "${pkgs.fastfetch}/bin/fastfetch";
-        lg = "${pkgs.lazygit}/bin/lazygit";
       };
 
       initContent = ''

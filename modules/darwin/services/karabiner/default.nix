@@ -10,11 +10,11 @@ with lib.${namespace};
 let
   cfg = config.services.karabiner;
 
-  fzfApps = pkgs.writeShellScriptBin "fzfApps" ''
+  tvApps = pkgs.writeShellScriptBin "tvApps" ''
     ls /Applications/ /Applications/Utilities/ /System/Applications/ /System/Applications/Utilities/ /Applications/Nix\ Apps/ | \
       grep '\.app$' | \
       sed 's/\.app$//g' | \
-      /etc/profiles/per-user/lalit/bin/fzf --border="none" --border-label="" --prompt="❯ "  --marker="󰅂" --pointer="󰅂" --separator "─" --scrollbar="│" --layout="reverse" --info="right" --color="bg+:#2d3f76,border:#589ed7,fg:#c8d3f5,gutter:#1e2030,header:#ff966c,hl:#65bcff,hl+:#65bcff,info:#545c7e,marker:#ff007c,pointer:#ff007c,prompt:#65bcff,query:#c8d3f5:regular,scrollbar:#589ed7,separator:#ff966c,spinner:#ff007c" | \
+      /etc/profiles/per-user/lalit/bin/tv | \
       xargs -I {} open -n -a "{}.app"
   '';
 in
@@ -56,14 +56,14 @@ in
                       },
                       "to": [
                         {
-                          "shell_command": "/opt/homebrew/bin/wezterm start --class org.wezfurlong.wezterm.fzfApps --always-new-process -- ${pkgs.zsh}/bin/zsh -c ${fzfApps}/bin/fzfApps"
+                          "shell_command": "/opt/homebrew/bin/wezterm start --class org.wezfurlong.wezterm.tvApps --always-new-process -- ${pkgs.zsh}/bin/zsh -c ${tvApps}/bin/tvApps"
                         }
                       ],
                       "conditions": [
                         {
                           "type": "frontmost_application_unless",
                           "bundle_identifiers": [
-                            "^org\\.wezfurlong\\.wezterm\\.fzfApps$"
+                            "^org\\.wezfurlong\\.wezterm\\.tvApps$"
                           ]
                         }
                       ]

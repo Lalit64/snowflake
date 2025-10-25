@@ -28,18 +28,6 @@ in
       '';
     };
 
-    programs.zsh = {
-      initContent = ''
-        export FZF_DEFAULT_OPTS='--color="bg+:#2d3f76,border:#589ed7,fg:#c8d3f5,gutter:#1e2030,header:#ff966c,hl:#65bcff,hl+:#65bcff,info:#545c7e,marker:#ff007c,pointer:#ff007c,prompt:#65bcff,query:#c8d3f5:regular,scrollbar:#589ed7,separator:#ff966c,spinner:#ff007c" '$FZF_DEFAULT_OPTS
-      '';
-    };
-
-    programs.superfile = {
-      settings = {
-        theme = "tokyonight";
-      };
-    };
-
     programs.vscode = mkIf config.programs.graphical.editors.vscode.enable {
       profiles = {
         default = {

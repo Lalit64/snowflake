@@ -23,7 +23,7 @@ in
       settings = {
         after-login-command = [ ];
         after-startup-command = [
-          # "exec-and-forget ${pkgs.zsh}/bin/zsh /Users/${config.user.name}/.config/sketchybar/helpers/media-stream.sh"
+          "exec-and-forget ${pkgs.zsh}/bin/zsh /Users/${config.user.name}/.config/sketchybar/helpers/media-stream.sh"
         ];
 
         key-mapping.preset = "qwerty";

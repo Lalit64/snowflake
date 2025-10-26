@@ -2,10 +2,10 @@
   description = "snowflake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
 
     snowfall-lib = {
-      url = "github:snowfallorg/lib";
+      url = "https://flakehub.com/f/snowfallorg/lib/3.0.3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -15,10 +15,11 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    neovim.url = "git+ssh://git@github.com/lalit64/nvim.git";
-    neovim.inputs.nixpkgs.follows = "nixpkgs";
-
     agenix.url = "github:ryantm/agenix";
+
+    snowvim.url = "github:lalit64/snowvim";
+    snowvim.inputs.nixpkgs.follows = "nixpkgs";
+    snowvim.inputs.snowfall-lib.follows = "snowfall-lib";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
@@ -65,8 +66,6 @@
       systems.modules.darwin = with inputs; [
         agenix.darwinModules.default
         secrets
-
-        neovim.nixosModules.default
       ];
 
       homes.modules = with inputs; [

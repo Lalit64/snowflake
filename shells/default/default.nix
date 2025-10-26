@@ -12,6 +12,7 @@ pkgs.mkShell {
       nixfmt-tree
       nixpkgs-fmt
       just
+      fh
     ])
     ++ (with inputs; [
       agenix.packages.${system}.default

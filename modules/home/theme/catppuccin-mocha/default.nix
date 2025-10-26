@@ -8,17 +8,17 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.theme.tokyonight-moon;
+  cfg = config.theme.catppuccin-mocha;
 in
 {
-  options.theme.tokyonight-moon = with types; {
-    enable = mkBoolOpt false "enable tokyonight-moon theme";
+  options.theme.catppuccin-mocha = with types; {
+    enable = mkBoolOpt false "enable catppuccin-mocha theme";
   };
 
   config = mkIf cfg.enable {
     programs.wezterm = mkIf config.programs.terminal.emulators.wezterm.enable {
       extraConfig = ''
-        M.color_scheme = "Tokyo Night Moon"
+        M.color_scheme = "catppuccin-mocha"
 
         return M
       '';
@@ -28,10 +28,10 @@ in
       profiles = {
         default = {
           extensions = with pkgs.vscode-extensions; [
-            enkia.tokyo-night
+            catppuccin.catppuccin-vsc
           ];
           userSettings = {
-            workbench.colorTheme = "Tokyo Night";
+            workbench.colorTheme = "Catppuccin Mocha";
           };
         };
       };
@@ -39,7 +39,7 @@ in
 
     programs.opencode = mkIf config.programs.terminal.tools.opencode.enable {
       settings = {
-        theme = "tokyonight";
+        theme = "catppuccin";
       };
     };
 
@@ -47,18 +47,18 @@ in
       ".config/sketchybar/theme.lua" = {
         text = ''
           return {
-            crust = 0xff1a1b26,
-            mantle = 0xff414868,
-            base = 0xff24283b,
-            text = 0xffc0caf5,
-            muted = 0xff9aa5ce,
-            red = 0xfff7768e,
-            orange = 0xffff9e64,
-            yellow = 0xffe0af68,
-            green = 0xff9ece6a,
-            cyan = 0xff2ac3de,
-            blue = 0xff7aa2f7,
-            purple = 0xffbb9af7,
+            crust = 0xff1e1e2e,
+            mantle = 0xff181825,
+            base = 0xff1e1e2e,
+            text = 0xffcdd6f4,
+            muted = 0xff585b70,
+            red = 0xfff38ba8,
+            orange = 0xfffab387,
+            yellow = 0xfff9e2af,
+            green = 0xffa6e3a1,
+            cyan = 0xff89dceb,
+            blue = 0xff89b4fa,
+            purple = 0xffcba6f7,
           } 
         '';
       };

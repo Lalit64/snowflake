@@ -20,7 +20,8 @@ in
 
       extraConfig =
         let
-          font = "CaskaydiaMono NF";
+          font =
+            if config.theme.stylix.enable then config.stylix.fonts.monospace.name else "JetBrainsMono NF";
         in
         ''
             local action = wezterm.action
@@ -107,6 +108,8 @@ in
               return ' ' .. title .. ' '
             end
           )
+
+            return M;
         '';
     };
   };

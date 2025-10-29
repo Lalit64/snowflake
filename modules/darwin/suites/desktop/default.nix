@@ -38,7 +38,7 @@ in
 
     system.activationScripts = {
       wallpaper.text = ''
-        ${pkgs.desktoppr}/bin/desktoppr "${pkgs.wallpapers}/share/wallpapers/cloudy-quasar-tokyo-night.png"
+        ${pkgs.desktoppr}/bin/desktoppr "${pkgs.wallpapers}/share/wallpapers/gruvbox-skyline.png"
       '';
     };
 

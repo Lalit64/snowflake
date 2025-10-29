@@ -21,6 +21,8 @@
     snowvim.inputs.nixpkgs.follows = "nixpkgs";
     snowvim.inputs.snowfall-lib.follows = "snowfall-lib";
 
+    stylix.url = "https://flakehub.com/f/nix-community/stylix/*";
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
@@ -71,6 +73,8 @@
       homes.modules = with inputs; [
         agenix.homeManagerModules.default
         secrets
+
+        stylix.homeModules.default
       ];
 
       outputs-builder = channels: {

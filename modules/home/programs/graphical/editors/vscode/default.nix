@@ -57,7 +57,8 @@ in
           userSettings = {
             editor.fontLigatures = true;
             editor.lineHeight = 26;
-            editor.fontFamily = "CaskaydiaCove Nerd Font";
+            editor.fontFamily =
+              if config.theme.stylix.enable then config.stylix.fonts.monospace.name else "JetBrainsMono NF";
             editor.fontSize = 14;
             workbench.iconTheme = "symbols";
             editor.minimap.enabled = false;

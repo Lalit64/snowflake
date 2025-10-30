@@ -38,7 +38,8 @@ in
 
     system.activationScripts = {
       wallpaper.text = ''
-        ${pkgs.desktoppr}/bin/desktoppr "${pkgs.wallpapers}/share/wallpapers/gruvbox-skyline.png"
+        echo >&2 "Setting wallpaper..."
+        ${pkgs.desktoppr}/bin/desktoppr 0 "${pkgs.wallpapers}/share/wallpapers/gruvbox-skyline.png"
       '';
     };
 

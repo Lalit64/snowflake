@@ -24,6 +24,11 @@
     stylix.url = "https://flakehub.com/f/nix-community/stylix/*";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -79,6 +84,17 @@
 
       outputs-builder = channels: {
         formatter = channels.nixpkgs.nixpkgs-fmt;
+
+        checks.pre-commit-check = inputs.pre-commit-hooks.lib.${channels.nixpkgs.system}.run {
+          src = ./.;
+          hooks = {
+            nixfmt = {
+              enable = true;
+              entry = "${channels.nixpkgs.nixfmt}/bin/nixfmt";
+              extraPackages = [ channels.nixpkgs.nixfmt ];
+            };
+          };
+        };
       };
     };
 }

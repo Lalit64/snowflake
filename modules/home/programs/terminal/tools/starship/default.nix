@@ -25,7 +25,6 @@ in
     programs.starship = {
       enable = true;
       enableZshIntegration = true;
-      enableNushellIntegration = true;
       settings = {
         add_newline = false;
         format = lib.concatStrings [

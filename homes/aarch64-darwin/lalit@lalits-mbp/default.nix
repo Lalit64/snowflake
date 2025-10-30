@@ -1,6 +1,10 @@
 { ... }:
 {
+
   suites.common.enable = true;
+
+  suites.social.enable = true;
+
   suites.development = {
     enable = true;
     aiEnable = true;
@@ -10,8 +14,7 @@
     enable = true;
     theme = "gruvbox-dark-hard";
   };
-  # theme.tokyonight-moon.enable = true;
-  # theme.catppuccin-mocha.enable = true;
 
+  # ======================== DO NOT CHANGE THIS ========================
   home.stateVersion = "24.11";
 }

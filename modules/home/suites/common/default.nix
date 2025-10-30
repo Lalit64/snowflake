@@ -36,7 +36,8 @@ in
           fastfetch.enable = true;
           git.enable = true;
           jj.enable = true;
-          superfile.enable = true;
+          lazydocker.enable = true;
+          yazi.enable = true;
           nh.enable = true;
           starship.enable = true;
         };

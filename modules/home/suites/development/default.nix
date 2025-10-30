@@ -19,9 +19,7 @@ in
     programs = {
       graphical = {
         editors = {
-          vscode = {
-            enable = true;
-          };
+          vscode.enable = true;
         };
       };
 

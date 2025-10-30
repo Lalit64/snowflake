@@ -22,7 +22,7 @@ in
       width = 3.0;
       hidpi = true;
 
-      active_color = "0xff83a598";
+      active_color = "0xffebdbb2";
       inactive_color = "0x00ffffff";
 
       whitelist = [

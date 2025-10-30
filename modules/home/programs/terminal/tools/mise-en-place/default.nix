@@ -18,7 +18,6 @@ in
     programs.mise = {
       enable = true;
       enableZshIntegration = true;
-      enableNushellIntegration = true;
       globalConfig = {
         tools = {
           node = "latest";

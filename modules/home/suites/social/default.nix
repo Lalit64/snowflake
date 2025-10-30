@@ -15,9 +15,12 @@ in
   };
 
   config = mkIf cfg.enable {
-    homebrew.casks = [
-      "whatsapp"
-      "zoom"
-    ];
+    programs = {
+      graphical = {
+        social = {
+          vesktop.enable = true;
+        };
+      };
+    };
   };
 }

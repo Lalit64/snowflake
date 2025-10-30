@@ -89,7 +89,7 @@ in
                       },
                       "to": [
                         {
-                          "shell_command": "killall " 
+                          "shell_command": "killall "
                         }
                       ],
                       "conditions": [
@@ -176,6 +176,43 @@ in
                         },
                         {
                           "shell_command": "pmset sleepnow"
+                        }
+                      ],
+                      "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 500
+                      }
+                    },
+                    {
+                      "description": "🌐 Passwords",
+                      "type": "basic",
+                      "from": {
+                        "simultaneous": [
+                          {
+                            "apple_vendor_top_case_key_code": "keyboard_fn"
+                          }
+                        ],
+                        "simultaneous_options": {
+                          "key_down_order": "strict",
+                          "key_up_order": "strict_inverse",
+                          "to_after_key_up": [
+                            {
+                              "set_variable": {
+                                "name": "launcher_mode",
+                                "value": 0
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "to": [
+                        {
+                          "set_variable": {
+                            "name": "launcher_mode",
+                            "value": 1
+                          }
+                        },
+                        {
+                          "shell_command": "open -a Passwords"
                         }
                       ],
                       "parameters": {

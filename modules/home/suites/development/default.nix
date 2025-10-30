@@ -19,7 +19,7 @@ in
     programs = {
       graphical = {
         editors = {
-          vscode.enable = true;
+          zed.enable = true;
         };
       };
 

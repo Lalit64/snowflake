@@ -26,6 +26,7 @@ in
       defaults = {
         CustomUserPreferences = {
           "com.apple.HIToolbox" = {
+            AppleFnUsageType = 4; # Do Nothing
             AppleCurrentKeyboardLayoutInputSourceID = "com.apple.keylayout.US";
             AppleEnabledInputSources = [
               {

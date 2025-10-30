@@ -19,7 +19,6 @@ in
     environment.systemPackages = with pkgs; [
       raycast
       switchaudio-osx
-      vscodium
       desktoppr
     ];
 

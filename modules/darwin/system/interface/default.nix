@@ -2,6 +2,7 @@
   config,
   lib,
   namespace,
+  pkgs,
   ...
 }:
 with lib;
@@ -21,16 +22,9 @@ in
 
     system.defaults = {
       CustomSystemPreferences = {
-        finder = {
-          DisableAllAnimations = true;
-          FXEnableExtensionChangeWarning = false;
-          QuitMenuItem = true;
-          ShowExternalHardDrivesOnDesktop = false;
-          ShowHardDrivesOnDesktop = false;
-          ShowMountedServersOnDesktop = false;
-          ShowPathbar = true;
-          ShowRemovableMediaOnDesktop = false;
-          _FXSortFoldersFirst = true;
+        "com.apple.desktopservices" = {
+          DSDontWriteNetworkStores = true;
+          DSDontWriteUSBStores = true;
         };
       };
 
@@ -48,6 +42,7 @@ in
           "/Applications/Helium.app/"
           "/Applications/WezTerm.app/"
           "/System/Applications/Music.app/"
+          "${pkgs.zed-editor}/Applications/Zed.app"
         ];
       };
 
